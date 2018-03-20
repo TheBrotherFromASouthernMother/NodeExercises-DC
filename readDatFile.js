@@ -8,6 +8,7 @@ const rl = readline.createInterface({
 });
 
 
+
 rl.question("Give me a file to read mofo: ", (answer) => {
   console.log(answer);
   fs.readFile(answer, function(err, data) {
