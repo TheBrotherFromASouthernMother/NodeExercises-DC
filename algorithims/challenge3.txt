@@ -1,0 +1,5 @@
+numberOfChairs = n;
+
+numberOfKnights = 10;
+
+numberOfAvailableChairs = 0.5(n - numberOfKnights);

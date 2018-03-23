@@ -18,6 +18,13 @@ app.use(require("./routes/greet.js"))
 app.use(require("./routes/history.js"))
 
 
+app.get("/ajaxTest", (req, res) => {
+  res.render('ajaxTest');
+})
+
+app.get("/AJAXCALL", (req, res) => {
+  res.send("<h2> I am nothing but a man </h2>")
+})
 
 app.use(express.static("app/public"))
 

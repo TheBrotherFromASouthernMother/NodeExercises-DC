@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX test</title>
+    <style media="screen">
+        button {
+          background-color: rgb(101, 188, 215);
+          border: 1px solid rgb(101, 188, 215);
+          padding: 1px solid white;
+          color: white;
+          border-radius: 10%;
+          margin-top: 20%;
+          margin-left: 20%;
+          font-size: 2.5em;
+          font-family: sans-serif;
+
+        }
+
+        .responseBox {
+          background-color: rgb(101, 188, 215);
+          border: 1px solid rgb(101, 188, 215);
+          padding: 1px solid white;
+          color: white;
+          font-size: 2.5em;
+          font-family: sans-serif;
+          width: 300px;
+          height: 300px;
+          margin-left: 20%;
+        }
+    </style>
+  </head>
+  <body>
+      <button type="button" name="button"> Click me motherfucker</button>
+
+      <div class="responseBox">
+
+
+      </div>
+
+      <script type="text/javascript">
+        let button = document.querySelector("button");
+        let responseBox = document.querySelector(".responseBox");
+
+        button.addEventListener("click", (e) => {
+
+          let xhr = new XMLHttpRequest();
+
+          xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+              responseBox.innerHTML = xhr.responseText;
+            }
+          }
+          xhr.open("GET", "http://localhost:3000/AJAXCALL")
+          xhr.send();
+          console.log('request sent')
+        })
+
+
+
+      </script>
+  </body>
+</html>
