@@ -1,0 +1,22 @@
+[
+  {   "name":"Sampson",
+      "description":"An image of my cat when he was a kitten",
+      "imgURL":"images/sampson.jpeg"
+  },
+  {     "name":"Leviathan",
+      "description":"An image of my cat when he was a kitten",
+      "imgURL":"images/leviathan.jpg"
+  },
+  {   "name":"Agar the Destroyer of worlds",
+      "description":"An image of my cat when he was a kitten",
+      "imgURL":"images/agar.jpg"
+  },
+  {     "name":"Abyss",
+      "description":"An image of my cat when he was a kitten",
+      "imgURL":"images/abyss.jpg"
+  },
+  {     "name":"Fluffers",
+      "description":"An image of my cat when he was a kitten",
+      "imgURL":"images/fluffers.jpg"
+  }
+]

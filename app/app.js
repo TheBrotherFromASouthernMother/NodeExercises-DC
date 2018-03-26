@@ -1,18 +1,20 @@
 
-var express = require('express');
+const express = require('express');
 
-var dataFile = require('./data.json');
+const app = express();
 
-// var reload = require('reload')
-var app = express();
+const bodyParser = require('body-parser')
 
+const dataFile = require('./data/data.json');
 
+const petFile = require('./data/pet.json')
 
 app.set('view engine', 'ejs');
-app.set('views', 'app/views');
+app.set('views', 'app/views'); //views folder
 
+app.use(bodyParser.urlencoded({extended: true}))
 
-app.use(require("./routes/index.js"));
+app.use(require("./routes/index.js")); //page index.ejs
 app.use(require("./routes/speakers.js"));
 app.use(require("./routes/greet.js"))
 app.use(require("./routes/history.js"))
@@ -24,6 +26,10 @@ app.get("/ajaxTest", (req, res) => {
 
 app.get("/AJAXCALL", (req, res) => {
   res.send("<h2> I am nothing but a man </h2>")
+})
+
+app.get("/pet", (req, res) => {
+  res.render('pet')
 })
 
 app.use(express.static("app/public"))
