@@ -18,20 +18,31 @@
         height: 100%;
         background: linear-gradient(to right, rgb(84, 46, 177), rgb(32, 146, 240));
       }
-      .main {
-
+      .sign-up {
+        display: flex;;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
+
+      input {
+        display: block;
+        margin: 2% 0 1% 0;
+        color: black;
+      }
+
     </style>
   </head>
   <body>
 
       <div class="container main">
         <h1> Welcome to the internet</h1>
-        <div class="login">
+        <div class="sign-up">
           <h3> Login</h3>
           <form class="" action="" method="POST">
-            <input type="text" name="username" value="" placeholder="username" style="color: black">
-            <input type="password" name="password" value="" placeholder="password" style="color: black">
+            <input type="text" name="username" value="" placeholder="Username">
+            <input type="email" name="email" value="" placeholder="Email">
+            <input type="password" name="password" value="" placeholder="Password">
             <input type="submit" name="submit" value="submit">
           </form>
 

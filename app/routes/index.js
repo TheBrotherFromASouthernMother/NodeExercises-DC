@@ -20,29 +20,21 @@ router.post("/", (req, res) => {
   bcrypt.genSalt(saltRounds, function(err, salt) {
     bcrypt.hash(plainTextPassword, salt, function(err, hash) {
         body.password = hash;
-        let savedUserData = [];
+        let savedUserData = null;
+        try {
+          savedUserData = fs.readFileSync("userInfo.json");
+          savedUserData = JSON.parse(savedUserData.toString());
+
+        } catch(e) {
+          savedUserData = [];
+        }
         savedUserData.push(body)
         console.log(savedUserData)
         fs.writeFileSync("userInfo.json", JSON.stringify(savedUserData));
 
     });
   });
-
-
-  res.send("nononono")
-
-  //parsing HTTP request without using body parser package
-  // let body = "";
-  // req.on('data', (data) => {
-  //   body += data;
-  // })
-  //
-  // req.on('end', (data) => {
-  //   // body = body.toString();
-  //   console.log(body)
-  //   fs.writeFileSync("userInfo.json", body);
-  //   res.send("nonono")
-  // })
+  res.redirect('/userPage')
 })
 
 

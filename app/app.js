@@ -9,6 +9,7 @@ const dataFile = require('./data/data.json');
 
 const petFile = require('./data/pet.json')
 
+
 app.set('view engine', 'ejs');
 app.set('views', 'app/views'); //views folder
 
@@ -17,7 +18,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(require("./routes/index.js")); //page index.ejs
 app.use(require("./routes/speakers.js"));
 app.use(require("./routes/greet.js"))
-app.use(require("./routes/history.js"))
+app.use(require("./routes/userPage.js"))
+app.use(require("./routes/api.js"))
+app.use(require("./routes/travel.js"))
 
 
 app.get("/ajaxTest", (req, res) => {
