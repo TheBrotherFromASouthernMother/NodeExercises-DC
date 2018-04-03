@@ -29,7 +29,20 @@
 //   })
 // })
 
+console.log(typeof number)
 
 function addNumbers(x, y) {
-  
+  return new Promise( (resolve, reject) => {
+    if (typeof x === 'number' && typeof y === 'number') {
+      resolve(x + y)
+    } else {
+      reject('Function[addNumbers]: arguments must be of primitive type number')
+    }
+  })
 }
+
+addNumbers("str", 2).then( result => {
+  console.log(result)
+}).catch( err => {
+  console.log(err)
+})
